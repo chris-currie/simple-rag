@@ -1,0 +1,62 @@
+# Byte-compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+
+# Env var file
+.env
+
+# Cache files
+*.log
+*.sqlite3
+*.pycache/
+*.cache
+*.mypy_cache/
+*.pytest_cache/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# VSCode settings
+.vscode/
+
+# macOS-specific files
+.DS_Store
+
+# IDE files
+.idea/
+
+# Coverage reports
+coverage.xml
+*.cover
+*.coverage
+*.coverage.*
+
+# Distribution files
+build/
+dist/
+*.egg-info/
+
+# Environment files
+.venv
+.venv/
+.venv.*
+*.ini
+*.cfg
+
+# Keys or sensitive files
+*.key
+
+# Testing results
+test-results/
+
+# Docker
+*.env.docker
+.dockerignore
+docker-compose.override.yml
+
+# Others
+Thumbs.db
