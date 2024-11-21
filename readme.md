@@ -72,7 +72,8 @@ After setting up the project, you can run it locally by following these steps:
 
 1. **Run the application**:
     - We're using Streamlit so:
-      ```streamlit run app.py
+      ```bash
+      streamlit run app.py
       ```
 
 2. **Interact with the chat**:
