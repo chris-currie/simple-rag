@@ -1,6 +1,6 @@
 # Minimal Chat
 
-A simple Python-based chat application that uses **LangChain** and other libraries to enable text-based interactions. This project aims to demonstrate how to integrate various language model tools in a minimalistic setup.
+A simple Python-based chat application that uses **LangChain** and other libraries to enable text-based interactions. This project follows a minimalistic setup and aims to demonstrate how to integrate MOSAiC into GenAI apps.
 
 ---
 
@@ -16,7 +16,7 @@ A simple Python-based chat application that uses **LangChain** and other librari
 
 ## Description
 
-**Minimal Chat** is a Python application that leverages LangChain, a framework for building language model-powered applications. The app allows users to interact with a model to ask questions and retrieve answers based on predefined data.
+**Minimal Chat** is a Python application that leverages LangChain, a framework for building language model-powered applications. The app allows users to upload files, create embeddings, and interact with a model to ask questions and retrieve answers based on the uploaded file contents.
 
 ---
 
@@ -24,7 +24,6 @@ A simple Python-based chat application that uses **LangChain** and other librari
 
 - **Python** (version 3.6+)
 - **LangChain** for question answering and chain-based language model interaction
-- **Flask** or **FastAPI** (if applicable for running a web service)
 - **Docker** (optional, if the app is containerized)
 
 ---
@@ -35,12 +34,12 @@ To run this project locally, follow these steps:
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/chris-currie/chat-with-pdf.git
+    git clone https://github.com/chris-currie/simple-rag.git
     ```
 
 2. **Navigate to the project directory**:
     ```bash
-    cd chat-with-pdf
+    cd simple-rag
     ```
 
 3. **Create a virtual environment** (optional but recommended):
@@ -72,13 +71,8 @@ To run this project locally, follow these steps:
 After setting up the project, you can run it locally by following these steps:
 
 1. **Run the application**:
-    - If you're using a Flask app, you can run it with:
-      ```bash
-      python app.py
-      ```
-    - If using FastAPI, start the server:
-      ```bash
-      uvicorn app:app --reload
+    - We're using Streamlit so:
+      ```streamlit run app.py
       ```
 
 2. **Interact with the chat**:
