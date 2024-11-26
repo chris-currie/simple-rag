@@ -62,7 +62,7 @@ To run this project locally, follow these steps:
     pip install -r requirements.txt
     ```
 
-6. **Set up environment variables** (if needed, e.g., API keys or config files). You will need to specify your OPEN_API_KEY in your environment. If running locally then create an `.env` file with OPEN_API_KEY=your-key.
+6. **Set up environment variables** (if needed, e.g., API keys or config files). You will need to specify your OPENAI_API_KEY in your environment. If running locally then create an `.env` file with OPENAI_API_KEY=your-key.
 
 ---
 

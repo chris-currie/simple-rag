@@ -1,5 +1,6 @@
 import streamlit as st
 import pypdf
+
 from langchain.memory import ConversationBufferMemory
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.vectorstores import FAISS
@@ -10,6 +11,8 @@ from langchain.document_loaders import PyPDFLoader, TextLoader
 import os
 import chardet
 import tempfile
+
+import dotenv
 
 def init_page():
     st.set_page_config(page_title="Document Chat Assistant")
@@ -83,8 +86,21 @@ def create_vectorstore(files):
     vector_store = FAISS.from_texts(all_chunks, embeddings)
     return vector_store
 
+# our model name now comes from MOSAiC so we should define it from the env variable 'MOSAIC_MODEL_NAME'
 def create_conversation_chain(vector_store):
-    llm = ChatOpenAI(temperature=0.7, model_name='gpt-3.5-turbo')
+    mosaic_model_name=os.environ['MOSAIC_MODEL_NAME']
+    mosaic_base_url=os.environ['MOSAIC_BASE_URL']
+    mosaic_api_key=os.environ['MOSAIC_API_KEY']
+    # Print the values for debugging
+    print('MOSAiC model name:', mosaic_model_name)
+    print('MOSAiC base URL:', mosaic_base_url)
+    print('MOSAiC API key:', mosaic_api_key)
+    llm = ChatOpenAI(temperature=0.7,
+                     model_name=mosaic_model_name,
+                     base_url=mosaic_base_url,
+                     api_key=mosaic_api_key,
+                     streaming=False
+                     )
     memory = ConversationBufferMemory(
         memory_key='chat_history',
         return_messages=True
@@ -98,6 +114,7 @@ def create_conversation_chain(vector_store):
     return conversation_chain
 
 def main():
+    dotenv.load_dotenv()
     init_page()
     
     # File upload
@@ -150,4 +167,5 @@ def main():
                     )
 
 if __name__ == '__main__':
+    openai_api_key = os.environ['OPENAI_API_KEY'] or ""
     main()
